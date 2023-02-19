@@ -11,6 +11,22 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   String name = "";
   bool changeButton = false;
+  final _formKey = GlobalKey<FormState>();
+
+  moveToHome(BuildContext context) async {
+    if (_formKey.currentState!.validate()) {
+      setState(() {
+        changeButton = true;
+      });
+      await Future.delayed(Duration(seconds: 3));
+      print("Hii Swati, I'm Going to HomePage....");
+      Navigator.pushNamed(context, MyRoutes.homeRoute);
+      setState(() {
+        print("Going Back to Login Page....");
+        changeButton = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,99 +42,115 @@ class _LoginPageState extends State<LoginPage> {
       ), */
       color: Colors.white,
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Image.asset(
-              "assets/images/office.png",
-              fit: BoxFit.contain,
-            ),
-            SizedBox(
-              height: 20,
-              width: 200,
-              child: Text(
-                "Welcome $name",
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              Image.asset(
+                "assets/images/office.png",
+                fit: BoxFit.contain,
+              ),
+              SizedBox(
+                height: 20,
+                width: 200,
+                child: Text(
+                  "Welcome $name",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32),
-              child: Column(
-                children: [
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: "Enter Username",
-                      labelText: "Username",
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32),
+                child: Column(
+                  children: [
+                    TextFormField(
+                      decoration: InputDecoration(
+                        hintText: "Enter Username",
+                        labelText: "Username",
+                      ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Usernme must not be Empty";
+                        }
+                        return null;
+                      },
+                      onChanged: (value) {
+                        name = value;
+                        setState(() {});
+                      },
                     ),
-                    onChanged: (value) {
-                      name = value;
-                      setState(() {});
-                    },
-                  ),
-                  TextFormField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: "Enter password",
-                      labelText: "Password",
+                    TextFormField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        hintText: "Enter password",
+                        labelText: "Password",
+                      ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Password must not be Empty";
+                        } else if (value.length < 6) {
+                          return "Password length must be greater than 6";
+                        }
+                        return null;
+                      },
                     ),
-                  ),
-                  SizedBox(
-                    height: 40.0,
-                  ),
-                  InkWell(
-                    onTap: () async {
-                      setState(() {
-                        changeButton = true;
-                      });
-                      await Future.delayed(Duration(seconds: 3));
-                      print("Hii Swati, I'm Going to HomePage....");
-                      Navigator.pushNamed(context, MyRoutes.homeRoute);
-                    },
-                    child: AnimatedContainer(
-                        duration: Duration(seconds: 3),
-                        width: changeButton ? 50 : 150,
-                        height: 50,
-                        alignment: Alignment.center,
-                        child:changeButton?Icon(Icons.done,color:Colors.white):Text(
-                          "Login",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18.0,
-                          ),
-                        ),
-                        decoration: BoxDecoration(
+                    SizedBox(
+                      height: 40.0,
+                    ),
+                    Material(
+                      color: Colors.deepPurple,
+                      borderRadius:
+                          BorderRadius.circular(changeButton ? 20 : 8),
+                      child: InkWell(
+                        onTap: () => moveToHome(context),
+                        child: AnimatedContainer(
+                          duration: Duration(seconds: 3),
+                          width: changeButton ? 50 : 150,
+                          height: 50,
+                          alignment: Alignment.center,
+                          child: changeButton
+                              ? Icon(Icons.done, color: Colors.white)
+                              : Text(
+                                  "Login",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18.0,
+                                  ),
+                                ),
+                          /* decoration: BoxDecoration(
                             color: Colors.deepPurple,
-                            /* shape: changeButton
-                                ? BoxShape.circle
-                                : BoxShape.rectangle, */
-                            borderRadius:BorderRadius.circular(changeButton ? 20 : 8)
-                            )
-                          ),
-                  ),
-
-                  /* ElevatedButton(
-                    child: Text("Login"),
-                    onPressed: () {
-                      print("Hello, Swati, I am Going on HomePage...");
-                      Navigator.pushNamed(context, MyRoutes.homeRoute);
-                    },
-                    style: TextButton.styleFrom(minimumSize: Size(150, 40)),
-                  ), */
-                ],
+                            shape: changeButton
+                                  ? BoxShape.circle
+                                  : BoxShape.rectangle,
+                            
+                          ), */
+                        ),
+                      ),
+                    )
+                    /* ElevatedButton(
+                      child: Text("Login"),
+                      onPressed: () {
+                        print("Hello, Swati, I am Going on HomePage...");
+                        Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      },
+                      style: TextButton.styleFrom(minimumSize: Size(150, 40)),
+                    ), */
+                  ],
+                ),
               ),
-            ),
-            /* child:Text("Welcome to Login Page",
-              style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-              ),
-            ) */
-          ],
+              /* child:Text("Welcome to Login Page",
+                style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                ),
+              ) */
+            ],
+          ),
         ),
       ),
     );
