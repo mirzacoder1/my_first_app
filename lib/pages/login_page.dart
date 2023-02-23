@@ -22,8 +22,8 @@ class _LoginPageState extends State<LoginPage> {
       print("Hii Swati, I'm Going to HomePage....");
       Navigator.pushNamed(context, MyRoutes.homeRoute);
       setState(() {
-        print("Going Back to Login Page....");
         changeButton = false;
+        print("Going Back to Login Page....");
       });
     }
   }
@@ -107,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: InkWell(
                         onTap: () => moveToHome(context),
                         child: AnimatedContainer(
-                          duration: Duration(seconds: 3),
+                          duration: Duration(seconds: 2),
                           width: changeButton ? 50 : 150,
                           height: 50,
                           alignment: Alignment.center,
