@@ -1,0 +1,36 @@
+{
+    "Products":[
+        {
+            "id":"Mirza001",
+            "name":"iPhone 11",
+            "desc":"Apple iPhone 11th Generation",
+            "price":9990,
+            "Color":"#33505a",
+            "image":"https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-pro-2.jpg"
+        },
+        {
+            "id":"Mirza002",
+            "name":"iPhone 12",
+            "desc":"Apple iPhone 12th Generation",
+            "price":9991,
+            "Color":"#00ac51",
+            "image":"https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-pro-2.jpg"
+        },
+        {
+            "id":"Mirza003",
+            "name":"iPhone 13",
+            "desc":"Apple iPhone 13th Generation",
+            "price":9992,
+            "Color":"#e0bfae",
+            "image":"https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-pro-2.jpg"
+        },
+        {
+            "id":"Mirza004",
+            "name":"iPhone 14",
+            "desc":"Apple iPhone 14th Generation",
+            "price":9993,
+            "Color":"#33504a",
+            "image":"https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-pro-2.jpg"
+        }
+    ]
+}
