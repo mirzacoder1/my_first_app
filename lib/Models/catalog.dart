@@ -1,13 +1,13 @@
 class CatalogModel{
-  static List<Item> get items => [
+  static final items = [
   Item(
-      id: 001,
+      id: 1,
       name: "iPhone 11",
       desc: "Apple iPhone 11th Generation",
       price: 9990,
       Color: "#33505a",
       image:
-          "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-pro-2.jpg")
+          "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-pro-2.jpg"),
 ];
 }
 class Item {
@@ -19,7 +19,7 @@ class Item {
   final String image;
 
   Item(
-     {required this.id,
+      {required this.id,
       required this.name,
       required this.desc,
       required this.price,
