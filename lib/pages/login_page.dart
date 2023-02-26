@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         changeButton = true;
       });
-      await Future.delayed(Duration(seconds: 3));
+      await Future.delayed(Duration(seconds: 1));
       print("Hii Swati, I'm Going to HomePage....");
       Navigator.pushNamed(context, MyRoutes.homeRoute);
       setState(() {
