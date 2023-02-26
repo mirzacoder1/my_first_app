@@ -84,6 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     TextFormField(
                       obscureText: true,
+                      keyboardType: TextInputType.numberWithOptions(decimal: true),
                       decoration: InputDecoration(
                         hintText: "Enter password",
                         labelText: "Password",
