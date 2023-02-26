@@ -2,35 +2,67 @@
     "products":[
         {
             "id":1,
+            "name":"samsung S21",
+            "desc":"Apple iPhone 13th Generation",
+            "price":990,
+            "Color":"#e0bfae",
+            "image":"https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRPRe9_ccZGUTU36BkOUVtPj9uFUq3kXX50vStX7VTDksNlWhaX216v67Q5h38pSsnyowt_gvCwyw&usqp=CAc"
+        },
+        {
+            "id":2,
+            "name":"Vivo v25",
+            "desc":"Vivo V-Series",
+            "price":991,
+            "Color":"#00ac51",
+            "image":"https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1661421101721/dff43d7d0b755812cebfb550ed4be42d.png"
+        },
+        {
+            "id":3,
             "name":"iPhone 11",
             "desc":"Apple iPhone 11th Generation",
-            "price":9990,
+            "price":992,
             "Color":"#33505a",
             "image":"https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-pro-2.jpg"
         },
         {
-            "id":2,
-            "name":"iPhone 12",
-            "desc":"Apple iPhone 12th Generation",
-            "price":9991,
-            "Color":"#00ac51",
-            "image":"https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-pro-2.jpg"
-        },
-        {
-            "id":3,
-            "name":"iPhone 13",
-            "desc":"Apple iPhone 13th Generation",
-            "price":9992,
-            "Color":"#e0bfae",
-            "image":"https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-pro-2.jpg"
-        },
-        {
             "id":4,
+            "name":"Samsung Smart Tv",
+            "desc":"Smasung Generation",
+            "price":993,
+            "Color":"#33504a",
+            "image":"https://m.media-amazon.com/images/I/51X2fGk5g3L._AC_UY327_FMwebp_QL65_.jpg"
+        },
+        {
+            "id":5,
+            "name":"Vivo Z1 pro",
+            "desc":"Vivo Z-Series",
+            "price":994,
+            "Color":"#33504a",
+            "image":"https://in-exstatic-vivofs.vivo.com/gdHFRinHEMrj3yPG/1561952594958/5ca110d24c69ccb4709e1a7e7e50ab22.jpg"
+        },
+        {
+            "id":6,
+            "name":"Vivo Y12",
+            "desc":"Vivo Y-Series",
+            "price":995,
+            "Color":"#33504a",
+            "image":"https://in-exstatic-vivofs.vivo.com/gdHFRinHEMrj3yPG/1559101603381/57fb9db320d25ac89918db30b43e6854.png"
+        },
+        {
+            "id":7,
             "name":"iPhone 14",
             "desc":"Apple iPhone 14th Generation",
-            "price":9993,
+            "price":996,
             "Color":"#33504a",
-            "image":"https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-pro-2.jpg"
+            "image":"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14-pro-max-.jpg"
+        },
+        {
+            "id":8,
+            "name":"OnePlus Smart Tv",
+            "desc":"OnePlus Smart TV",
+            "price":997,
+            "Color":"#33504a",
+            "image":"https://m.media-amazon.com/images/I/819SRH2DKBL._AC_UY327_FMwebp_QL65_.jpg"
         }
     ]
 }
